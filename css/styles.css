@@ -1,0 +1,658 @@
+/*====================================*/
+/* RESET CSS */
+/*====================================*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@keyframes fade-out{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+
+/***** Global Slide *****/
+.slide-right, .slide-left {
+   width:100%;
+  }
+  
+  /***** Slide Right *****/
+  .slide-right {
+    animation: 1s slide-right;
+  }
+  @keyframes slide-right {
+    from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+  /***** Slide Left *****/
+  .slide-left {
+    animation: 1s slide-left;
+  }
+  @keyframes slide-left {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html{
+    scroll-behavior: smooth;
+  }
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size:1.2rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/*===============================================================*/
+/*====UTILITY CLASSES==================*/
+
+.flex{
+    display:flex;
+    gap: var(--gap, 2rem);
+}
+
+.grid{
+    display:grid;
+    gap: var(--gap, 1rem);
+}
+.sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+section{
+    
+}
+
+.fade-out{
+   animation: fade-out .5s;
+   opacity: 0;
+}
+
+.fade-in {
+    animation: fade-in .5s;
+  }
+/*=======================================================*/
+
+/*Primary header*/
+/*==============*/
+body{
+    background-color: #242B49;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  box-shadow: 0px 5px 10px 0px #222;
+  background-color: #8588A9;
+}
+
+.logo{
+  color:rgb(226, 226, 226);
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  font-size: 1.3rem;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin:0;
+  width:70%;
+}
+.nav-links li{
+  list-style: none;
+  padding: .5rem;
+}
+.nav-links a{
+  color:rgb(226, 226, 226);
+  text-decoration: none; 
+}
+
+.burger{
+  display:none;
+}
+
+.burger div{
+  width:25px;
+  height: 5px;
+  background-color:rgb(226, 226, 226);
+  margin:5px;
+  transition: all 0.3s ease;
+}
+
+
+/*==========================================*/
+
+/*=====HERO======================================*/
+
+.hero{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap, 1rem);
+    min-height: 100vh;
+    background-color: #242B49;
+    align-items: center;
+}
+
+.box{
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 2rem;
+    background-color: rgb(133,133,169, .15);
+    border-radius: 2%;
+}
+
+.media-element{
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+}
+
+/*======clases que cambian con el JS==============*/
+
+.hero-texto{
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
+.texto-adicional-full{
+    background-color: #fff;
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.contexto-logo-mid{
+    margin:0 auto;
+}
+
+.box-1{
+    color: #000;
+    background-color: #fff;
+    max-width: 80%;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 2rem 2rem 0 2rem;
+}
+
+/*===================================================*/
+/*===================INFORMES===============================*/
+
+.informes{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    max-width:90vw;
+    margin:0 auto;
+    background-color: #8588A9;
+}
+
+.container-reel{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding:1rem;
+    width: 100%;
+    
+}
+
+.info-reel{
+    padding:1rem;
+    display: flex;
+    align-items: center;
+}
+
+.img-reel{
+    border-radius: 3%;
+}
+
+footer{
+    display:block;
+    font-size:100%;
+}
+
+#footer {
+    list-style: none;
+    padding: 8em 0 6em 0;
+    background: #242B49;
+    color: #aaa;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+}
+.logos{
+    display:flex;
+    justify-content: center;
+}
+.logos img{
+    width:60%;
+}
+
+/*=====================================================*/
+/*====================================Texto informe=========================*/
+.sintesis{
+    background-color: #fff;
+    padding:2rem;
+}
+
+/*===================================================*/
+
+/*===============GLOSARIO================================*/
+#glosario{
+    padding-top:10rem;
+}
+
+.accordion {
+    width: 80%;
+    margin: 0 auto;
+    color: black;
+    background-color: #EDD694;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  .accordion h1{
+    font-size:2rem;
+    padding:2rem 0 2rem 0;
+  }
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+  }
+  
+  .accordion-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+  }
+  
+  .accordion-content > div {
+    overflow: hidden;
+  }
+  .accordion-panel {
+    padding: 1rem;
+    border: 1px solid;
+    cursor: pointer;
+  }
+  
+  .accordion h2 {
+    position: relative;
+    font-size: 1.2rem;
+  }
+  
+  .accordion-trigger {
+    background: transparent;
+    border: 0;
+    padding:0;
+    font: inherit;
+    color: inherit;
+  }
+  
+  .accordion-trigger::before,
+  .accordion-trigger::after {
+    position: absolute;
+    right: 1em;
+    content: "";
+    display: block;
+    width: 1em;
+    height: 5px;
+    background: currentcolor;
+    transition: transform 500ms;
+  }
+  
+  .accordion-trigger::after {
+    rotate: 90deg;
+    translate: 0 -1.5em;
+  }
+  
+  .accordion-trigger[aria-expanded="true"]::before,
+  .accordion-trigger[aria-expanded="true"]::after {
+    transform: rotate(45deg);
+  }
+    
+/*=========================================================*/
+
+/*=========================INTEGRANTES================================*/
+#intro-integrantes{
+  padding-top:10rem;
+  margin:0;
+  
+}
+
+.intro-integrantes{
+  background-color: #8588A9;
+  padding:2rem 2rem 10rem 2rem;
+  font-size: 1.3rem;
+}
+
+#intro-integrantes::after{
+  content:'';
+  position:absolute;
+  background-color: #242b49;
+  box-shadow: inset 0 -1px 0 0 #242b49, 0 1px 0 0 #242b49;
+  inset:0;
+  transform: skewY(-5deg);
+  z-index:-1;
+}
+
+.todos-integrantes{
+  background-color: #8588A9;
+  margin:0;
+}
+
+.todos-integrantes h2{
+  font-size: 1.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2rem;
+}
+
+.integrante{
+  position:relative;
+  display:flex;
+  align-items: center;
+  padding: 2.2em 0 1em 0;
+  margin: 0 auto;
+  max-width: 60em;
+  
+  overflow: hidden;
+}
+
+.diagonal-box-1 {
+  position: relative;
+  height: auto;
+  padding-block:3rem;    
+  isolation: isolate;
+  
+}
+
+.diagonal-box-1::after{
+  content:'';
+  position:absolute;
+  background-color: #242b49;
+  box-shadow: inset 0 -1px 0 0 #242b49, 0 1px 0 0 #242b49;
+  inset:0;
+  transform: skewY(-5deg);
+  z-index:-1;
+} 
+
+.diagonal-box-1::before{
+  content:'';
+  position:absolute;
+  background-color: #8588a9;
+  box-shadow: inset 0 -1px 0 0 #8588a9, 0 1px 0 0 #8588a9;
+  inset:0;
+  transform: skewY(5deg);
+  z-index:-1;
+} 
+
+.diagonal-box-2 {
+  position: relative;
+  height: auto;
+  padding-block:3rem; 
+  isolation:isolate;  
+}
+
+.diagonal-box-2::after{
+  content:'';
+  position:absolute;
+  background-color: #8588a9;
+  box-shadow: inset 0 -1px 0 0 #8588a9, 0 1px 0 0 #8588a9;
+  inset:0;
+  transform: skewY(5deg);
+  z-index:-1;
+} 
+
+.diagonal-box-2::before{
+  content:'';
+  position:absolute;
+  background-color: #242b49;
+  box-shadow: inset 0 -1px 0 0 #242b49, 0 1px 0 0 #242b49;
+  inset:0;
+  transform: skewY(-5deg);
+  z-index:-1;
+} 
+
+.content {
+  margin-top: -5vw;
+  background-image: linear-gradient(135deg, #777, #111);
+}
+
+.content {
+ max-width: 50em;
+   margin: 0 auto;
+   position: relative;
+}
+.colaboradores{
+  display: flex;
+  flex-direction: column;
+  padding:5rem;
+  width:65%;
+  margin:0 auto;
+}
+
+.intro-integrantes h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.estilo-1{
+  flex-direction: row;
+}
+
+
+.descripcion-integrante{
+  flex:1;
+  padding:1rem;
+}
+
+.descripcion-integrante h3{
+ 
+}
+
+h3.nombre{
+  letter-spacing: 0.1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+  padding-bottom:2rem;
+}
+
+.estilo-2{
+  flex-direction: row-reverse;
+}
+
+.integrante img {
+  width: 250px; /* Ajusta el tamaño según tus necesidades */
+  height: 250px;
+  border: 1px solid #E2B833;
+  border-radius: 50%; /* Hace la imagen redonda */
+  object-fit: cover; /* Asegura que la imagen se ajuste al tamaño de la caja */
+  margin-right: 20px; /* Añade espacio entre la imagen y el texto */
+}
+
+
+/*==========================================================*/
+
+/*=======================media queries=======================*/
+
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+}
+.nav-links{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position:absolute;
+    right: 0px;
+    height:92vh;
+    top:8vh;
+    background-color: #8588A9;
+    width:50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in
+}
+.nav-links li{
+    opacity:0;
+}
+.burger{
+    display:block;
+    cursor:pointer;
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity:0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .linea1{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.toggle .linea2{
+    opacity:0;
+}
+.toggle .linea3{
+    transform: rotate(45deg) translate(-8px, -6px);
+}
+
+    .hero{
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+    .contexto-logo{
+        padding-top: 6rem;
+    }
+    .intro{
+        padding:1rem;
+    }
+    .informes{
+        display:grid;
+        grid-template-columns: 1fr;
+        max-width:90vw;
+        margin:0 auto;
+        background-color: #8588A9;
+    }
+    .container-reel{
+        padding-top: 56.25%;
+    }
+    .box{
+        font-size:1rem;
+    }
+    .integrante{
+      flex-direction: column;
+      width:80%;
+    }
+    /*======FOOTER==========*/
+    
+}
