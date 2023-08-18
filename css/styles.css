@@ -185,6 +185,7 @@ nav{
   display:flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 10;
   min-height: 8vh;
   box-shadow: 0px 5px 10px 0px #222;
   background-color: #8588A9;
@@ -235,7 +236,7 @@ nav{
     grid-template-columns: 1fr 1fr;
     gap: var(--gap, 1rem);
     min-height: 100vh;
-    background-color: #242B49;
+    background-image: url(../assets/img/overlay.png), url(../assets/img/header.svg), linear-gradient(75deg, #242B49 15%, #8588A9 55%);
     align-items: center;
 }
 
@@ -243,8 +244,8 @@ nav{
     font-size: 1.4rem;
     color: #fff;
     padding: 2rem;
-    background-color: rgb(133,133,169, .15);
-    border-radius: 2%;
+    background-color: rgb(34, 34, 34, .15);
+    border-radius: 20px;
 }
 
 .media-element{
@@ -260,7 +261,12 @@ nav{
     grid-template-columns: 1fr;
 }
 
+.texto-adicional-show{
+  display:block;
+}
+
 .texto-adicional-full{
+    display:block !important;
     background-color: #fff;
     padding: 2rem;
     font-size: 1.4rem;
@@ -283,27 +289,45 @@ nav{
 /*===================INFORMES===============================*/
 
 .informes{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    max-width:90vw;
-    margin:0 auto;
-    background-color: #8588A9;
-}
-
-.container-reel{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding:1rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  grid-template-rows: repeat(4, 200px);
+  max-width: 90vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #8588a9;
     
 }
 
+.square{
+  grid-column: 2 / 4;
+  width: 600px;
+  height: 500px;
+  background-color: #E2B833;
+  align-self: center;
+}
+
+.container-reel, .info-reel, .square{
+  grid-row: 2 / 4;
+}
+
+.container-reel{
+  grid-column: 1 / 3;
+  z-index: 3;
+  grid-row: 2 / 4;
+  padding: 2rem;
+}
+
 .info-reel{
-    padding:1rem;
-    display: flex;
-    align-items: center;
+  grid-column: 3 / 6;
+  /* grid-row: 1 / 5; */
+  z-index: 2;
+  align-self: center;
+  padding: 4rem;
+  background-color: #fff;
+  /* box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5); */
+  box-shadow: -1px 22px 29px -20px rgba(0,0,0,0.32);
 }
 
 .img-reel{
@@ -455,7 +479,6 @@ footer{
   padding: 2.2em 0 1em 0;
   margin: 0 auto;
   max-width: 60em;
-  
   overflow: hidden;
 }
 
@@ -520,9 +543,9 @@ footer{
 }
 
 .content {
- max-width: 50em;
-   margin: 0 auto;
-   position: relative;
+  max-width: 50em;
+  margin: 0 auto;
+  position: relative;
 }
 .colaboradores{
   display: flex;
@@ -580,11 +603,12 @@ h3.nombre{
 @media screen and (max-width:768px){
   body{
     overflow-x: hidden;
+    font-size: 1rem;
 }
 .nav-links{
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     position:absolute;
     right: 0px;
     height:92vh;
@@ -626,33 +650,56 @@ h3.nombre{
     transform: rotate(45deg) translate(-8px, -6px);
 }
 
-    .hero{
-        display:grid;
-        grid-template-columns: 1fr;
-    }
-    .contexto-logo{
-        padding-top: 6rem;
-    }
-    .intro{
-        padding:1rem;
-    }
-    .informes{
-        display:grid;
-        grid-template-columns: 1fr;
-        max-width:90vw;
-        margin:0 auto;
-        background-color: #8588A9;
-    }
-    .container-reel{
-        padding-top: 56.25%;
-    }
-    .box{
-        font-size:1rem;
-    }
-    .integrante{
-      flex-direction: column;
-      width:80%;
-    }
+.hero{
+    display:grid;
+    grid-template-columns: 1fr;
+}
+.contexto-logo{
+    padding-top: 6rem;
+}
+.texto-adicional-full {
+  font-size: 1rem;
+}
+.box-1{
+  font-size:1rem;
+}
+.intro{
+    padding:1rem;
+}
+.informes{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #8588A9;
+}
+.container-reel{
+  display: grid;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  }
+  .info-reel {
+    padding: 1rem;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+}
+  .square{
+    display:none;
+  }
+  
+.box{
+    font-size:1rem;
+}
+  .integrante{
+    flex-direction: column;
+    width:80%;
+  }
     /*======FOOTER==========*/
     
-}
+

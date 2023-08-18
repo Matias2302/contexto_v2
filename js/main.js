@@ -24,39 +24,36 @@ navSlide();
 
 /*===Contenido dinámico con trigger====*/
 // Obtener el botón y el div con el texto adicional
-const mostrarBtn = document.getElementById("mostrarBtn");
-const textoAdicional = document.getElementById("texto-adicional");
-const hero = document.getElementById("hero");
-const box = document.getElementById("box");
-const contextoLogo = document.getElementById("contexto-logo");
+const mostrarBtn = document.querySelector('.mostrarBtn');
+console.log(mostrarBtn);
+const textoAdicional = document.querySelector('.texto-adicional');
+const hero = document.querySelector('.hero');
+const box = document.querySelector('.box');
+const contextoLogo = document.querySelector('.contexto-logo');
 
 if (mostrarBtn) {
 // Agregar un evento de clic al botón
-mostrarBtn.addEventListener("click", function () {
+mostrarBtn.addEventListener("click", function (){
   // Mostrar o ocultar el div con el texto adicional
-  if (textoAdicional.style.display === "none") 
-  {
-    textoAdicional.style.display = "block";
-    textoAdicional.classList.remove("fade-out");
-    textoAdicional.classList.add("fade-in");
-    textoAdicional.classList.add("texto-adicional-full");
-    box.classList.add("box-1");
-    box.classList.add("fade-in");
-    hero.classList.add("hero-texto");
-    contextoLogo.classList.add("slide-right");
-    contextoLogo.classList.add("contexto-logo-mid");
-    
-    mostrarBtn.textContent = "Menos info";
-  } else {
-    textoAdicional.classList.remove("fade-in");
-    textoAdicional.classList.add("fade-out");
-    box.classList.remove("box-1");
-    hero.classList.remove("hero-texto");
-    contextoLogo.classList.add("slide-left");
-    contextoLogo.classList.remove("contexto-logo-mid");
-    textoAdicional.style.display = "none";
-    mostrarBtn.textContent = "Más info";
-  }
+  textoAdicional.classList.toggle('texto-adicional-full');
+  textoAdicional.classList.toggle('fade-in');
+  box.classList.toggle("box-1");
+  box.classList.toggle("fade-in");
+  hero.classList.toggle("hero-texto");
+  contextoLogo.classList.toggle("slide-right");
+  contextoLogo.classList.toggle("contexto-logo-mid");
+  mostrarBtn.textContent = "Menos info";
+
+  function handleClick() {
+    const initialText = 'Más info';
+    if (mostrarBtn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+      console.log(initialText);
+      btn.innerHTML = 'Menos info';
+    } else {
+      mostrarBtn.textContent = initialText;
+    }
+  };
+  handleClick();
 });
 }
 /*================GLOASRIO==========================*/
