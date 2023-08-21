@@ -1,3 +1,4 @@
+//Navbar
 const navSlide = ()=> {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -25,16 +26,16 @@ navSlide();
 /*===Contenido dinámico con trigger====*/
 // Obtener el botón y el div con el texto adicional
 const mostrarBtn = document.querySelector('.mostrarBtn');
-console.log(mostrarBtn);
 const textoAdicional = document.querySelector('.texto-adicional');
 const hero = document.querySelector('.hero');
 const box = document.querySelector('.box');
 const contextoLogo = document.querySelector('.contexto-logo');
 
+//Si el elemento mostrarBtn existe hago todo lo demás
 if (mostrarBtn) {
-// Agregar un evento de clic al botón
-mostrarBtn.addEventListener("click", function (){
-  // Mostrar o ocultar el div con el texto adicional
+
+function toggleClassesBtn(e){
+   // Mostrar o ocultar el div con el texto adicional
   textoAdicional.classList.toggle('texto-adicional-full');
   textoAdicional.classList.toggle('fade-in');
   box.classList.toggle("box-1");
@@ -42,20 +43,17 @@ mostrarBtn.addEventListener("click", function (){
   hero.classList.toggle("hero-texto");
   contextoLogo.classList.toggle("slide-right");
   contextoLogo.classList.toggle("contexto-logo-mid");
-  mostrarBtn.textContent = "Menos info";
-
-  function handleClick() {
-    const initialText = 'Más info';
-    if (mostrarBtn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
-      console.log(initialText);
-      btn.innerHTML = 'Menos info';
-    } else {
-      mostrarBtn.textContent = initialText;
-    }
-  };
-  handleClick();
-});
+  if (e.target.textContent === 'Más info') {
+    e.target.textContent = 'Menos info';
+} else {
+    e.target.textContent = 'Más info';
 }
+  
+}  
+// Agregar un evento de clic al botón
+mostrarBtn.addEventListener("click", toggleClassesBtn);
+}
+
 /*================GLOASRIO==========================*/
 const accordion = document.querySelector(".accordion");
 

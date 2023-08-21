@@ -89,8 +89,8 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-size:1.2rem;
+  line-height: 1.7;
+  font-size:18px;
 }
 
 /* A elements that don't have a class get default styles */
@@ -164,8 +164,8 @@ section{
 }
 
 .fade-out{
-   animation: fade-out .5s;
-   opacity: 0;
+  animation: fade-out .5s;
+  opacity: 0;
 }
 
 .fade-in {
@@ -270,6 +270,10 @@ nav{
     background-color: #fff;
     padding: 2rem;
     font-size: 1.4rem;
+}
+
+#info{
+  margin-bottom:4rem;
 }
 
 .contexto-logo-mid{
@@ -700,6 +704,7 @@ h3.nombre{
     flex-direction: column;
     width:80%;
   }
+}
     /*======FOOTER==========*/
     
 
