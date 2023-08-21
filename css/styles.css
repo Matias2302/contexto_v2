@@ -431,7 +431,7 @@ footer{
   
   .accordion-trigger::after {
     rotate: 90deg;
-    translate: 0 -1.5em;
+    translate: 0 -1.6em;
   }
   
   .accordion-trigger[aria-expanded="true"]::before,
