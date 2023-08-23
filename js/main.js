@@ -21,7 +21,27 @@ const navSlide = ()=> {
   
 }
 navSlide();
+//fin navbar
 
+//otro boton con trigger
+var BtnPdf = document.querySelector(".btn-pdf");
+var informeFull = document.querySelector("#informe-pdf");
+var isHidden = true;
+
+if(BtnPdf){
+BtnPdf.addEventListener("click", function () {
+  if (isHidden) {
+    
+    informeFull.classList.remove("out");
+    informeFull.classList.add("active");
+  } else {
+    informeFull.classList.remove("active");
+    informeFull.classList.add("out");
+    
+  }
+  isHidden = !isHidden;
+});
+}
 
 /*===Contenido dinámico con trigger====*/
 // Obtener el botón y el div con el texto adicional
@@ -30,29 +50,32 @@ const textoAdicional = document.querySelector('.texto-adicional');
 const hero = document.querySelector('.hero');
 const box = document.querySelector('.box');
 const contextoLogo = document.querySelector('.contexto-logo');
-
+var heroOculto = true;
 //Si el elemento mostrarBtn existe hago todo lo demás
 if (mostrarBtn) {
 
-function toggleClassesBtn(e){
-   // Mostrar o ocultar el div con el texto adicional
-  textoAdicional.classList.toggle('texto-adicional-full');
-  textoAdicional.classList.toggle('fade-in');
-  box.classList.toggle("box-1");
-  box.classList.toggle("fade-in");
-  hero.classList.toggle("hero-texto");
-  contextoLogo.classList.toggle("slide-right");
-  contextoLogo.classList.toggle("contexto-logo-mid");
-  if (e.target.textContent === 'Más info') {
-    e.target.textContent = 'Menos info';
-} else {
-    e.target.textContent = 'Más info';
+  function toggleClassesBtn(e){
+    // Mostrar o ocultar el div con el texto adicional
+    heroOculto = false;
+    textoAdicional.classList.toggle('texto-adicional-full');
+    textoAdicional.classList.toggle('fade-in');
+    box.classList.toggle("box-1");
+    box.classList.toggle("fade-in");
+    hero.classList.toggle("hero-texto");
+    contextoLogo.classList.toggle("slide-right");
+    contextoLogo.classList.toggle("contexto-logo-mid");
+    if (e.target.textContent === 'Más info') {
+      e.target.textContent = 'Menos info';
+      } else {
+          e.target.textContent = 'Más info';
+      }
+    
+        
+  }  
+  // Agregar un evento de clic al botón
+  mostrarBtn.addEventListener("click", toggleClassesBtn);
 }
-  
-}  
-// Agregar un evento de clic al botón
-mostrarBtn.addEventListener("click", toggleClassesBtn);
-}
+
 
 /*================GLOASRIO==========================*/
 const accordion = document.querySelector(".accordion");
