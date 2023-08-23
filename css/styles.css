@@ -167,6 +167,11 @@ select {
 .fade-in {
   animation: fade-in .5s;
   }
+
+  .yellow{
+    color:#fffb6c;
+    font-weight: bold;
+  }
 /*=======================================================*/
 
 /*Primary header*/
@@ -231,7 +236,7 @@ nav{
 .wrapper {
   position:relative;
   /* The image used */
-  background-image: url(../assets/img/intro.svg), linear-gradient(75deg, #242B49 15%, #8588A9 55%);
+  background-image: url(../assets/img/contexto_overlay_b.png), linear-gradient(90deg, rgba(36,43,73,1) 60%, rgba(133,136,169,1) 100%);
   overflow-x: hidden;
   z-index: 0;
   /* Create the parallax scrolling effect */
@@ -372,6 +377,16 @@ nav{
   box-shadow: -1px 22px 29px -20px rgba(0,0,0,0.32);  
 }
 
+.informes-2{
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  grid-template-rows: repeat(4, 200px);
+  max-width: 90vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;  
+}
+
 .square{
   grid-column: 2 / 4;
   width: 600px;
@@ -391,6 +406,17 @@ nav{
   padding: 2rem;
 }
 
+.container-reel-2{
+  grid-column: 4 / 6;
+  z-index: 3;
+  grid-row: 4 / 2;
+  padding: 2rem;
+}
+
+.container-reel-2 video{
+  box-shadow: -1px 22px 29px -20px rgba(0,0,0,0.32);
+}
+
 .info-reel{
   grid-column: 3 / 6;
   /* grid-row: 1 / 5; */
@@ -401,6 +427,15 @@ nav{
   /* box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5); */
   box-shadow: -1px 22px 29px -20px rgba(0,0,0,0.32);
 }
+.info-reel-2{
+  grid-column: 1 / 4;
+  grid-row: 1 / 5;
+  z-index: 2;
+  align-self: center;
+  padding: 4rem;
+  color:#fff;
+}
+
 
 .img-reel{
     border-radius: 3%;
@@ -430,7 +465,7 @@ footer{
 /*=====================================================*/
 /*====================================Texto informe=========================*/
 .sintesis{
-    background-color: #fff;
+    background-color: #8588A9;
     padding:2rem;
 }
 
@@ -783,13 +818,13 @@ h3.nombre{
 .intro{
     padding:1rem;
 }
-.informes{
+.informes, .informes-2{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   max-width: 100%;
   margin: 0 auto;
-  background-color: #8588A9;
+  
 }
 .container-reel{
   display: grid;
@@ -800,7 +835,7 @@ h3.nombre{
   padding: 1rem;
   width: 100%;
   }
-  .info-reel {
+  .info-reel, .info-reel-2 {
     padding: 1rem;
     grid-column: 1;
     display: flex;
