@@ -6,7 +6,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT-sans', sans-serif;
 }
 
 /* Remove default margin */
@@ -171,6 +171,21 @@ select {
   .yellow{
     color:#fffb6c;
     font-weight: bold;
+  }
+  .light{
+    font-weight: 100;
+  }
+
+  .regular{
+    font-weight: 200;
+  }
+
+  .medium{
+    font-weight: 300;
+  }
+
+  .bold{
+    font-weight: 400;
   }
 /*=======================================================*/
 
