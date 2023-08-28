@@ -25,23 +25,56 @@ navSlide();
 
 //otro boton con trigger
 var BtnPdf = document.querySelector(".btn-pdf");
+var BtnPdf2 = document.querySelector(".btn-pdf-2");
 var informeFull = document.querySelector("#informe-pdf");
+var informeFull_2 = document.querySelector("#informe-pdf-2");
 var isHidden = true;
 
 if(BtnPdf){
-BtnPdf.addEventListener("click", function () {
-  if (isHidden) {
+  function toggleClassBtnPdf(e){
     
-    informeFull.classList.remove("out");
-    informeFull.classList.add("active");
-  } else {
-    informeFull.classList.remove("active");
-    informeFull.classList.add("out");
+      if (isHidden) {
+        
+        informeFull.classList.remove("out");
+        informeFull.classList.add("active");
+      } else {
+        informeFull.classList.remove("active");
+        informeFull.classList.add("out");
+        
+      }
+      if (e.target.textContent === 'Leer más') {
+        e.target.textContent = 'Leer menos';
+        } else {
+            e.target.textContent = 'Leer más';
+        }
+      isHidden = !isHidden;
+    }
+    BtnPdf.addEventListener("click", toggleClassBtnPdf);
+  } 
+  
+  if(BtnPdf2){
+    function toggleClassBtnPdf2(e){
+      
+        if (isHidden) {
+          
+          informeFull_2.classList.remove("out");
+          informeFull_2.classList.add("active");
+        } else {
+          informeFull_2.classList.remove("active");
+          informeFull_2.classList.add("out");
+          
+        }
+        if (e.target.textContent === 'Leer más') {
+          e.target.textContent = 'Leer menos';
+          } else {
+              e.target.textContent = 'Leer más';
+          }
+        isHidden = !isHidden;
+      }
+      BtnPdf2.addEventListener("click", toggleClassBtnPdf2);
+    } 
     
-  }
-  isHidden = !isHidden;
-});
-}
+
 
 /*===Contenido dinámico con trigger====*/
 // Obtener el botón y el div con el texto adicional
