@@ -94,6 +94,7 @@ if (mostrarBtn) {
     textoAdicional.classList.toggle('fade-in');
     box.classList.toggle("box-1");
     box.classList.toggle("fade-in");
+    box.classList.toggle("fade-out");
     hero.classList.toggle("hero-texto");
     contextoLogo.classList.toggle("slide-right");
     contextoLogo.classList.toggle("contexto-logo-mid");
