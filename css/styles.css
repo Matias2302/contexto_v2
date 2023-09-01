@@ -857,6 +857,7 @@ footer{
     transition: transform 500ms;
   }
   
+  
   .accordion-trigger-long::after {
     rotate: 90deg;
     translate: 0 -2rem;
@@ -889,7 +890,139 @@ footer{
   .accordion-trigger[aria-expanded="true"]::after {
     transform: rotate(45deg);
   }
-    
+/*Otro acordeón*/
+
+.accordion dl,
+.accordion-list {
+  border: 1px solid;
+  color: #242B49;
+}
+
+.accordion dl:after,
+.accordion-list:after {
+  content: "";
+  display: block;
+  height: 1em;
+  width: 100%;
+  filter: brightness(85%);
+}
+
+.accordion dt{
+  border: 1px solid;
+  color: #242B49;
+}
+
+.accordion dd,
+.accordion__panel {
+  background-color: #EDD694;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.accordion p {
+  padding: 1em 2em;
+}
+
+.accordion {
+  position: relative;
+  background-color: #EDD694;
+}
+
+.accordionTitle,
+.accordion__Heading {
+  background-color: #EDD694;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+  color: #242B49;
+  transition: background-color 0.5s ease-in-out;
+  
+}
+
+.accordionTitle:before,
+.accordion__Heading:before {
+  content: "+";
+  font-size: 1.8rem;
+  line-height: 0.5em;
+  float: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordionTitle:hover,
+.accordion__Heading:hover {
+  filter: brightness(85%);
+}
+
+.accordionTitleActive,
+.accordionTitle.is-expanded,
+.accordion__HeadingActive,
+.accordion__Heading.is-expanded {
+  filter: brightness(85%);
+}
+
+.accordionTitleActive:before,
+.accordionTitle.is-expanded:before,
+.accordion__HeadingActive:before,
+.accordion__Heading.is-expanded:before {
+  transform: rotate(-225deg);
+}
+
+.accordionItem {
+  height: auto;
+  overflow: hidden;
+  /* SHAME: magic number to allow the accordion to animate */
+  max-height: 50em;
+  transition: max-height 1s;
+
+  @media screen and (min-width: 48em) {
+    max-height: 15em;
+    transition: max-height 0.5s;
+  }
+}
+
+.accordionItem.is-collapsed {
+  max-height: 0;
+}
+
+.no-js .accordionItem.is-collapsed {
+  max-height: auto;
+}
+
+.animateIn {
+  animation: accordionIn 0.45s normal ease-in-out both 1;
+}
+
+.animateOut {
+  animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(-60deg);
+    transform-origin: 50% 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes accordionOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(-60deg);
+  }
+}
+
+/*=========================================================*/
+  
 /*=========================================================*/
 
 /*=========================INTEGRANTES================================*/
